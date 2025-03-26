@@ -10,7 +10,7 @@ import (
 	"testing"
 )
 
-// Formats an error and calls the `t.Fatal` to stop any futher execution of the
+// Formats an error and calls the `t.Fatal` to stop any further execution of the
 // unit test. The error will have the following format:
 //
 //	Error | File <file> Line #### | <message>
