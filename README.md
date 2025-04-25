@@ -31,7 +31,7 @@ A very simple library that helps with assertions in unit tests.
 
 
 <a name="ContainsError"></a>
-## func [ContainsError](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L34>)
+## func [ContainsError](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L34>)
 
 ```go
 func ContainsError(t *testing.T, expected error, got error)
@@ -40,7 +40,7 @@ func ContainsError(t *testing.T, expected error, got error)
 Tests that the expected error is present in the given error.
 
 <a name="Eq"></a>
-## func [Eq](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L83>)
+## func [Eq](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L83>)
 
 ```go
 func Eq[T comparable](t *testing.T, expected T, got T)
@@ -49,7 +49,7 @@ func Eq[T comparable](t *testing.T, expected T, got T)
 Tests that the supplied values are equal. For equality rules refer to the language reference: https://go.dev/ref/spec#Comparison_operators
 
 <a name="EqFloat"></a>
-## func [EqFloat](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L112>)
+## func [EqFloat](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L112>)
 
 ```go
 func EqFloat[T ~float32 | float64](t *testing.T, expected T, got T, eps T)
@@ -58,7 +58,7 @@ func EqFloat[T ~float32 | float64](t *testing.T, expected T, got T, eps T)
 Tests that the given float is within \+/\- eps distance of the expected float.
 
 <a name="EqFunc"></a>
-## func [EqFunc](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L128>)
+## func [EqFunc](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L128>)
 
 ```go
 func EqFunc[T any](t *testing.T, expected T, got T, cmp func(l T, r T) bool)
@@ -67,7 +67,7 @@ func EqFunc[T any](t *testing.T, expected T, got T, cmp func(l T, r T) bool)
 Tests that the given value is equal to the expected value using the supplied comparison function to determine equality.
 
 <a name="EqOneOf"></a>
-## func [EqOneOf](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L97>)
+## func [EqOneOf](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L97>)
 
 ```go
 func EqOneOf[T comparable](t *testing.T, expected T, data []T)
@@ -76,7 +76,7 @@ func EqOneOf[T comparable](t *testing.T, expected T, data []T)
 Tests that the expected value is present in the supplied slice. For equality rules refer to the language reference: https://go.dev/ref/spec#Comparison_operators
 
 <a name="False"></a>
-## func [False](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L171>)
+## func [False](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L171>)
 
 ```go
 func False(t *testing.T, v bool)
@@ -85,7 +85,7 @@ func False(t *testing.T, v bool)
 Tests that the supplied value is false. This is useful for validating that expressions that evaluate to a boolean. This should not be used for equality comparisons such as \`False\(t, 6\!=5\)\`. For equality comparisons refer to one of the Eq\* functions defined in this file.
 
 <a name="FormatError"></a>
-## func [FormatError](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L19-L26>)
+## func [FormatError](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L19-L26>)
 
 ```go
 func FormatError(t *testing.T, expected any, got any, base string, file string, line int)
@@ -100,7 +100,7 @@ Got:      (<type>) <value>
 ```
 
 <a name="MapsMatch"></a>
-## func [MapsMatch](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L313-L317>)
+## func [MapsMatch](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L313-L317>)
 
 ```go
 func MapsMatch[K comparable, V any](t *testing.T, expected map[K]V, got map[K]V)
@@ -109,7 +109,7 @@ func MapsMatch[K comparable, V any](t *testing.T, expected map[K]V, got map[K]V)
 Tests that the supplied maps match in length and content. For equality rules refer to the language reference: https://go.dev/ref/spec#Comparison_operators
 
 <a name="Neq"></a>
-## func [Neq](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L141>)
+## func [Neq](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L141>)
 
 ```go
 func Neq[T comparable](t *testing.T, expected any, got any)
@@ -118,7 +118,7 @@ func Neq[T comparable](t *testing.T, expected any, got any)
 Tests that the supplied values are not equal. For equality rules refer to the language reference: https://go.dev/ref/spec#Comparison_operators
 
 <a name="Nil"></a>
-## func [Nil](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L184>)
+## func [Nil](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L184>)
 
 ```go
 func Nil(t *testing.T, v any)
@@ -127,7 +127,7 @@ func Nil(t *testing.T, v any)
 Tests that the supplied value is nil. \`nil\` slices, maps, pointers, and interfaces are considered to be nil and will pass this test.
 
 <a name="NoPanic"></a>
-## func [NoPanic](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L66>)
+## func [NoPanic](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L66>)
 
 ```go
 func NoPanic(t *testing.T, action func())
@@ -136,7 +136,7 @@ func NoPanic(t *testing.T, action func())
 Tests that the supplied action does not result in a panic. Any panic that does occur is recovered so all future unit tests will still run.
 
 <a name="NotNil"></a>
-## func [NotNil](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L212>)
+## func [NotNil](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L212>)
 
 ```go
 func NotNil(t *testing.T, v any)
@@ -145,7 +145,7 @@ func NotNil(t *testing.T, v any)
 Tests that the supplied value is not nil. \`nil\` slices, maps, pointers, and interfaces are considered to be nil and will fail this test.
 
 <a name="Panics"></a>
-## func [Panics](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L49>)
+## func [Panics](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L49>)
 
 ```go
 func Panics(t *testing.T, action func())
@@ -154,7 +154,7 @@ func Panics(t *testing.T, action func())
 Tests that the supplied action results in a panic. The panic is recovered so all future unit tests will still run.
 
 <a name="SlicesMatch"></a>
-## func [SlicesMatch](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L248>)
+## func [SlicesMatch](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L248>)
 
 ```go
 func SlicesMatch[T comparable](t *testing.T, expected []T, got []T)
@@ -163,7 +163,7 @@ func SlicesMatch[T comparable](t *testing.T, expected []T, got []T)
 Tests that the supplied slices match. In order for the slices to match they must be the same length and values in the same index must compare equal. For equality rules refer to the language reference: https://go.dev/ref/spec#Comparison_operators
 
 <a name="SlicesMatchUnordered"></a>
-## func [SlicesMatchUnordered](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L271>)
+## func [SlicesMatchUnordered](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L271>)
 
 ```go
 func SlicesMatchUnordered[T comparable](t *testing.T, expected []T, got []T)
@@ -172,7 +172,7 @@ func SlicesMatchUnordered[T comparable](t *testing.T, expected []T, got []T)
 Tests that the supplied slices match in length and content but not in order. For equality rules refer to the language reference: https://go.dev/ref/spec#Comparison_operators
 
 <a name="True"></a>
-## func [True](<https://github.com/barbell-math/smoothbrain-test/blob/main/Test.go#L156>)
+## func [True](<https://github.com/barbell-math/smoothbrain-test/blob/main/test.go#L156>)
 
 ```go
 func True(t *testing.T, v bool)

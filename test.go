@@ -53,7 +53,7 @@ func Panics(t *testing.T, action func()) {
 			FormatError(
 				t,
 				"panic", "",
-				"The supplied funciton did not panic when it should have.",
+				"The supplied function did not panic when it should have.",
 				f, line,
 			)
 		}
@@ -70,7 +70,7 @@ func NoPanic(t *testing.T, action func()) {
 			FormatError(
 				t,
 				"", "panic",
-				"The supplied funciton paniced when it shouldn't have.",
+				"The supplied function panicked when it shouldn't have.",
 				f, line,
 			)
 		}
