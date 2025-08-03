@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math"
 	"reflect"
+	"regexp"
 	"runtime"
 	"testing"
 )
@@ -31,7 +32,7 @@ func FormatError(
 }
 
 // Tests that the expected error is present in the given error.
-func ContainsError(t *testing.T, expected error, got error) {
+func ContainsError(t *testing.T, expected error, got error, msgs ...string) {
 	if !errors.Is(got, expected) {
 		_, f, line, _ := runtime.Caller(1)
 		FormatError(
@@ -41,6 +42,22 @@ func ContainsError(t *testing.T, expected error, got error) {
 			"The expected error was not contained in the given error.",
 			f, line,
 		)
+	}
+	errStr := got.Error()
+	for _, iterMsg := range msgs {
+		re := regexp.MustCompile(iterMsg)
+		if !re.MatchString(errStr) {
+			_, f, line, _ := runtime.Caller(1)
+			FormatError(
+				t,
+				expected,
+				got,
+				fmt.Sprintf(
+					"The regex '%s' did not match the supplied error", iterMsg,
+				),
+				f, line,
+			)
+		}
 	}
 }
 
